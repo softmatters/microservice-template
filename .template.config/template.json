@@ -2,9 +2,9 @@
   "$schema": "http://json.schemastore.org/template",
   "icon": "icon.png",
   "author": "PA Consulting",
-  "classifications": [ "Linux", "MacOs", "Windows", "Web", "Web API", "Microservice" ],
+  "classifications": [ "Linux", "MacOs", "Windows", "Web", "Web API", "Microservice", "Clean Architecture" ],
   "name": "ASP.NET Core Web API (Microservice)",
-  "description": "A clean architecture project template for creating a RESTful API or Microservice using ASP.NET Core Controllers. The project uses the folder structure similar to Jason Taylor's Clean Architecture Solution Template. https://github.com/jasontaylordev/Microservice",
+  "description": "A clean architecture project template for creating a RESTful API or Microservice using ASP.NET Core Controllers. The project uses the folder structure similar to Jason Taylor's Clean Architecture Solution Template. https://github.com/jasontaylordev/microservice",
   "shortName": "microservice",
   "defaultName": "Microservice",
   "identity": "WebApi.Microservice.CleanArchitecture",
@@ -12,18 +12,18 @@
     "language": "C#",
     "type": "solution"
   },
-  "sourceName": "Microservice",
+  "sourceName": "MicroserviceTemplate",
   "preferNameDirectory": false,
   "guids": [
-    "5AA58CF5-D213-4867-BC0B-BDB983EBCE1A",
-    "AC21A1CE-9A8A-409E-812E-70F3B986A444",
-    "B2CC715F-2ADB-4F9B-AB14-A7D661DB8615",
-    "2A2825A6-E50C-4746-8334-EDCAC11F9FC4",
-    "D9DD7CB6-572E-48BF-AE08-82C5D7D46743",
-    "4442BB7D-9C3F-442A-90E9-638DFC8D55DA",
-    "AA79C58A-4D68-421D-BBC3-44597F35582C",
-    "5D105679-8D8A-4700-8A4F-2126B0DFFD06",
-    "18076af7-4e2f-4d8a-b83f-db63b71cadbc"
+    "34D13451-8956-4CA0-BB36-8DDE5710A023",
+    "E1F0F537-5CB6-40D4-8AD5-204ED21FD16E",
+    "975C1D44-1A9F-463F-AB15-E12C9236142F",
+    "95F6E985-97DF-4AE6-A8FC-37E4A227A5AF",
+    "0DF48F50-744B-43CB-BC25-64C598B2F48D",
+    "CC27E710-095F-48B4-ADB9-981A04F1DC57",
+    "134E92A2-5F53-4680-9C17-E7D79C068E93",
+    "07149F34-369E-4431-9200-EA80938D36C5",
+    "e0439177-ab6a-4984-ac72-c5521c53b77e"
   ],
   "symbols": {
     "Framework": {
@@ -57,7 +57,7 @@
         "sourceVariableName": "HttpPortGenerated",
         "fallbackVariableName": "HttpPortGenerated"
       },
-      "replaces": "5067"
+      "replaces": "port:5067"
     },
     //"HttpsPort": {
     //  "type": "parameter",
@@ -80,7 +80,7 @@
         "sourceVariableName": "HttpsPortGenerated",
         "fallbackVariableName": "HttpsPortGenerated"
       },
-      "replaces": "7228"
+      "replaces": "port:7228"
     },
     "HostIdentifier": {
       "type": "bind",
@@ -91,6 +91,8 @@
     {
       "exclude": [
         ".template.config/**",
+        "**/.git/**",
+        "**/*.csproj.user",
         "**/.vs/**",
         "**/.vscode/**",
         "**/bin/**",
@@ -100,7 +102,7 @@
         {
           "condition": "(HostIdentifier == \"dotnetcli\" ||  HostIdentifier == \"dotnetcli-preview\")",
           "rename": {
-            "Microservice.Solution.sln": "Microservice.sln"
+            "MicroserviceTemplate.Solution.sln": "MicroserviceTemplate.sln"
           }
         }
       ]
@@ -108,7 +110,7 @@
   ],
   "primaryOutputs": [
     {
-      "path": "Microservice.Solution.sln"
+      "path": "MicroserviceTemplate.Solution.sln"
     }
   ]
 }

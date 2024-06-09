@@ -37,20 +37,20 @@ dotnet build
 2. To run the tests, use the following command. Path to the test project is needed if you are running the tests from outside the test project directory.
 
 ```
- dotnet test .\tests\UnitTests\Microservice.UnitTests\ --no-build
+ dotnet test .\tests\UnitTests\MicroserviceTemplate.UnitTests\ --no-build
 
- dotnet test .\tests\IntegrationTests\Microservice.IntegrationTests\ --no-build
+ dotnet test .\tests\IntegrationTests\MicroserviceTemplate.IntegrationTests\ --no-build
 ```
 
 3. To run the application, use the following command:
 
 ```
-dotnet run --project .\src\Startup\Microservice\
+dotnet run --project .\src\Startup\MicroserviceTemplate\
 ```
 
 if this project is part of .NET Aspire based development, include this in the .NET Aspire AppHost project
 and run the host app.
 
 ```
-dotnet run --project .\src\AppHost\Microservice.AppHost\
+dotnet run --project .\src\AppHost\MicroserviceTemplate.AppHost\
 ```
