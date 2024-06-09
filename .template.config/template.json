@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "icon": "icon.png",
+  "author": "PA Consulting",
+  "classifications": [ "Linux", "MacOs", "Windows", "Web", "Web API", "Microservice" ],
+  "name": "ASP.NET Core Web API (Microservice)",
+  "description": "A clean architecture project template for creating a RESTful API or Microservice using ASP.NET Core Controllers. The project uses the folder structure similar to Jason Taylor's Clean Architecture Solution Template. https://github.com/jasontaylordev/Microservice",
+  "shortName": "microservice",
+  "defaultName": "Microservice",
+  "identity": "WebApi.Microservice.CleanArchitecture",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Microservice",
+  "preferNameDirectory": false,
+  "guids": [
+    "5AA58CF5-D213-4867-BC0B-BDB983EBCE1A",
+    "AC21A1CE-9A8A-409E-812E-70F3B986A444",
+    "B2CC715F-2ADB-4F9B-AB14-A7D661DB8615",
+    "2A2825A6-E50C-4746-8334-EDCAC11F9FC4",
+    "D9DD7CB6-572E-48BF-AE08-82C5D7D46743",
+    "4442BB7D-9C3F-442A-90E9-638DFC8D55DA",
+    "AA79C58A-4D68-421D-BBC3-44597F35582C",
+    "5D105679-8D8A-4700-8A4F-2126B0DFFD06",
+    "18076af7-4e2f-4d8a-b83f-db63b71cadbc"
+  ],
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net8.0",
+          "description": "Target net8.0"
+        }
+      ],
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
+    },
+    //"HttpPort": {
+    //  "type": "parameter",
+    //  "datatype": "integer",
+    //  "description": "Port number to use for the HTTP endpoint in launchSettings.json.",
+    //  "isEnabled": false
+    //},
+    "HttpPortGenerated": {
+      "type": "generated",
+      "generator": "port"
+    },
+    "HttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        //"sourceVariableName": "HttpPort",
+        "sourceVariableName": "HttpPortGenerated",
+        "fallbackVariableName": "HttpPortGenerated"
+      },
+      "replaces": "5067"
+    },
+    //"HttpsPort": {
+    //  "type": "parameter",
+    //  "datatype": "integer",
+    //  "description": "Port number to use for the HTTPS endpoint in launchSettings.json."
+    //},
+    "HttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port"
+      //"parameters": {
+      //  "low": 5000,
+      //  "high": 5999
+      //}
+    },
+    "HttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        // "sourceVariableName": "HttpsPort",
+        "sourceVariableName": "HttpsPortGenerated",
+        "fallbackVariableName": "HttpsPortGenerated"
+      },
+      "replaces": "7228"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
+    }
+  },
+  "sources": [
+    {
+      "exclude": [
+        ".template.config/**",
+        "**/.vs/**",
+        "**/.vscode/**",
+        "**/bin/**",
+        "**/obj/**"
+      ],
+      "modifiers": [
+        {
+          "condition": "(HostIdentifier == \"dotnetcli\" ||  HostIdentifier == \"dotnetcli-preview\")",
+          "rename": {
+            "Microservice.Solution.sln": "Microservice.sln"
+          }
+        }
+      ]
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Microservice.Solution.sln"
+    }
+  ]
+}
